@@ -6,7 +6,7 @@ module template::coin_template {
     use sui::url::new_unsafe_from_bytes;
 
     /// The OTW for the Coin
-    struct TEMPLATE has drop {}
+    struct COIN_TEMPLATE has drop {}
 
     const DECIMALS: u8 = 6;
     const SYMBOL: vector<u8> = b"TMPL";
@@ -17,7 +17,7 @@ module template::coin_template {
     const TREASURY_CAP_RECIPIENT: address = @0x0;
 
     /// Init the Coin
-    fun init(witness: TEMPLATE, ctx: &mut TxContext) {
+    fun init(witness: COIN_TEMPLATE, ctx: &mut TxContext) {
         let (treasury, metadata) = coin::create_currency(
             witness, 
             DECIMALS, 
